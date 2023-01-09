@@ -3,7 +3,6 @@ import random
 import wandb
 
 from torch_agents import DQN_agent
-# from keras_agents import DQN_agent
 
 TRAIN_EPISODES = 2000
 SEED = 42

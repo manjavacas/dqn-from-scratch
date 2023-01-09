@@ -1,2 +1,4 @@
-# drl-from-scratch
-Deep Reinforcement Learning algorithms implemented from scratch
+## About...
+
+* **Deep Reinforcement Learning** algorithms implemented from scratch.
+* Tested in **OpenAI Gym** environments.

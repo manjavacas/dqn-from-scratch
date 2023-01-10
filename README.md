@@ -1,8 +1,8 @@
-## 🗒 About...
+## 🗒 About
 
 * **Deep Reinforcement Learning** algorithms implemented from scratch.
 * Tested in **OpenAI Gym** environments.
 
-## ☑️ Current implementations
+## ☑️ Implemented
 
-* DQN (Deep Q-Network)
+* **DQN**

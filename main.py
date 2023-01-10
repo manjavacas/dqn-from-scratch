@@ -9,7 +9,7 @@ SEED = 42
 
 random.seed(SEED)
 
-# wandb.init(project="cartpole-dqn")
+wandb.init(project="cartpole-torch-dqn")
 
 
 def train_dqn():
@@ -18,7 +18,7 @@ def train_dqn():
     dim_observation_space = env.observation_space.shape[0]
     dim_action_space = env.action_space.n
 
-    agent = DQN_agent(dim_observation_space, dim_action_space, alpha=0.00025)
+    agent = DQN_agent(dim_observation_space, dim_action_space)
 
     episode = 0
 
@@ -43,7 +43,7 @@ def train_dqn():
 
             if done:
                 print(f"Cumulative reward = {episode_reward}")
-                # wandb.log({"episode_reward_sum": episode_reward, "episode": episode})
+                wandb.log({"episode_reward_sum": episode_reward, "episode": episode})
                 state, _ = env.reset()
                 episode += 1
 

@@ -1,20 +1,19 @@
 import random
 import numpy as np
 
-from collections import deque
-
 import torch
 import torch.nn as nn
 import torch.optim as optim
 
 from torch.nn import functional as F
+from collections import deque
 
 
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 
 class DQN_agent():
-    ''' Double Deep Q-learning agent implementation. '''
+    ''' Deep Q-learning agent implementation. '''
 
     def __init__(
         self,
@@ -59,6 +58,7 @@ class DQN_agent():
 
         self.replay_buffer = deque(maxlen=self.buffer_size)
 
+        # Q-network
         self.q_network = nn.Sequential(
             nn.Linear(self.observation_space, 64),
             nn.ReLU(),
@@ -67,6 +67,7 @@ class DQN_agent():
             nn.Linear(64, self.action_space)
         ).to(device)
 
+        # Target-network
         self.target_network = nn.Sequential(
             nn.Linear(self.observation_space, 64),
             nn.ReLU(),
@@ -75,6 +76,7 @@ class DQN_agent():
             nn.Linear(64, self.action_space)
         ).to(device)
 
+        # Q-network Xavier initialization
         for layer in self.q_network:
             if isinstance(layer, nn.Linear):
                 nn.init.xavier_uniform_(layer.weight)

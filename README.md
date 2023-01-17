@@ -9,6 +9,5 @@
 
 ## 📝 Coming soon
 
-- **REINFORCE**
 - **A2C** (Advantage Actor-Critic)
 - **PPO** (Proximal Policy Optimization)

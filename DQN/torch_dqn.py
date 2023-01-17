@@ -99,7 +99,7 @@ class DQN_agent():
 
         # Train Q-network periodically
         if len(self.replay_buffer) >= self.samples_to_learn and len(self.replay_buffer) >= self.batch_size and self.steps % self.train_steps == 0:
-            self.train_q_net()
+            self.learn()
 
         # Update Target-network periodically
         if self.steps % self.target_update_steps == 0:
@@ -114,7 +114,7 @@ class DQN_agent():
         ''' Adds a tuple (s, a, r, s', done) to the replay buffer. '''
         self.replay_buffer.append([state, action, reward, state_next, done])
 
-    def train_q_net(self):
+    def learn(self):
         ''' Updates the Q-network based on sampled past experience tuples. '''
         # Apply N optimization steps
         for _ in range(self.grad_steps):

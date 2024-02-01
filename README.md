@@ -7,7 +7,7 @@
 
 - **DQN** (Deep Q-Network)
 
-## 📝 Coming soon
+## 📝 TO-DO
 
 - **REINFORCE**
 - **A2C** (Advantage Actor-Critic)
